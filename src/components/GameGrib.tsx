@@ -4,13 +4,15 @@ import GameCard from './GameCard';
 import GameCardSkeleton from './GameCardSkeleton';
 import GameCardContainer from './GameCardContainer';
 import { Genre } from '@/hooks/useGenres';
+import { Platform } from '@/hooks/usePlatforms';
 
 interface Prop{
-    selectedGenre: Genre | null
+    selectedGenre: Genre | null,
+    selectedPlatform: Platform | null,
 }
 
-function GameGrib({selectedGenre}: Prop) {
-    const { error, data, isLoading} = useGames(selectedGenre);
+function GameGrib({selectedGenre, selectedPlatform}: Prop) {
+    const { error, data, isLoading} = useGames(selectedGenre, selectedPlatform);
     const skeletons = [ 1, 2, 3, 4, 5, 6]; // render six skeleton cards
 
     return (
