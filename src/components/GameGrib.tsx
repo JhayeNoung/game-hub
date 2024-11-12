@@ -32,5 +32,5 @@ function GameGrib({selectedGenre, selectedPlatform}: Prop) {
         </>
     )
 }
-
+  
 export default GameGrib
