@@ -1,0 +1,15 @@
+import { ReactNode } from 'react'
+import { Box } from '@chakra-ui/react'
+
+interface Prop{
+    children: ReactNode
+}
+
+function GameCardContainer({ children }: Prop) {
+  return (
+    // GameCardSkeleton and GameCard will be the 'children' of GameCardContainer
+    <Box borderRadius={10} overflow="hidden">{children}</Box>
+  )
+}
+
+export default GameCardContainer
