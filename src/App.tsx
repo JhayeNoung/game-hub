@@ -17,9 +17,7 @@ export interface GameQuery {
 function App() {
   const breakpoint = useBreakpointValue({base: 0, lg: 1})
   const [ gameQuery, setGameQuery ] = useState<GameQuery>({} as GameQuery)
-
-  console.log(gameQuery);
-
+  
   return (
     <>
       <Grid
