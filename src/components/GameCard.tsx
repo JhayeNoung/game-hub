@@ -2,6 +2,7 @@ import { Card, CardBody, Image, HStack} from '@chakra-ui/react'
 import { Game } from '@/hooks/useGames'
 import PlatformIconList from './PlatformIconList'
 import MetacriticBadge from './MetacriticBadge'
+import { optimizedImage } from '@/helper/image-optimization'
 
 interface Prop{
     game: Game;
@@ -9,9 +10,8 @@ interface Prop{
 
 function GameCard({ game }: Prop) {
   return (
-    // borderRadius document is under Styling > Style Props > Border
     <Card.Root>
-        <Image src={game.background_image}/>
+        <Image src={optimizedImage(game.background_image)}/>
         <CardBody>
             <Card.Title>{game.name}</Card.Title>
             <HStack justify={'space-between'}>
