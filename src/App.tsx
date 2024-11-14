@@ -30,7 +30,7 @@ function App() {
 
         templateColumns={{
           base: '1fr', // base is 1 fraction, means in small device
-          lg: '200px 1fr', // in large scree, first column take 200px and second takes all
+          lg: '220px 1fr', // in large scree, first column take 200px and second takes all
         }}
       >
         <GridItem area="nav">
@@ -40,20 +40,22 @@ function App() {
         {/* Conditionally render based on screen size using `when` */}
         {/* Show Aside on 'lg' */}
         <Show when={breakpoint === 1}>
-          <GridItem area="aside" paddingX={3}>
+          <GridItem area="aside">
             <GenreList selectedGenre={gameQuery.genre} onClick={(genre)=>setGameQuery({...gameQuery, genre})}/>
           </GridItem>
         </Show>
         
         <GridItem area="main">
-          <Box padding={3}>
+          <Box paddingLeft={3} paddingBottom={3}>
             <GameHeading game={gameQuery}/>
-            <HStack marginBottom={5}>
-              <PlatformSelector selectedPlatform={gameQuery.platform} onSelectedPlatform={(platform)=>setGameQuery({...gameQuery, platform})}/>
-              <SortSelector selectedSortOrder={gameQuery.ordering} onSelectedSortOrder={(ordering)=>setGameQuery({...gameQuery, ordering})}/>
-            </HStack>
           </Box>
-          <GameGrib gameQuery={gameQuery}/>
+          <HStack paddingLeft={3}>
+            <PlatformSelector selectedPlatform={gameQuery.platform} onSelectedPlatform={(platform)=>setGameQuery({...gameQuery, platform})}/>
+            <SortSelector selectedSortOrder={gameQuery.ordering} onSelectedSortOrder={(ordering)=>setGameQuery({...gameQuery, ordering})}/>
+          </HStack>
+          <Box padding={3}>
+            <GameGrib gameQuery={gameQuery}/>
+          </Box>
         </GridItem>
 
       </Grid>

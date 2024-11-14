@@ -6,6 +6,9 @@ interface Props{
 }
 
 function GameHeading({ game }: Props) {
+  // default: Games
+  // if you choose genre: Genre Games
+  // if you choose platform: Platform Genre Games
   const heading = `${game.platform?.name || ''} ${game.genre?.name || ''} Games`
 
   return (

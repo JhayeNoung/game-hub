@@ -16,7 +16,7 @@ function GameGrib({gameQuery}: Prop) {
     return (
         <>
         {error && <Text>{error}</Text> }
-        <SimpleGrid columns={{sm: 1, md:2, lg: 3, xl: 5}} gap={3} paddingX={3}>
+        <SimpleGrid columns={{sm: 1, md:2, lg: 3, xl: 5}} gap={3}>
             { isLoading && skeletons.map(skeleton => 
             // Wrap 'GameCardSkeleton' and 'Game Card' with 'GameCardContainer' 
             <GameCardContainer key={skeleton}>
