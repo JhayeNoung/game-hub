@@ -11,7 +11,7 @@ function SearchInput({ submitHandler }: Props) {
   const { register, handleSubmit, formState: { errors }} = useForm();
 
   return (
-    <form onSubmit={handleSubmit(submitHandler)} >
+    <form onSubmit={handleSubmit(submitHandler)}>
       <InputGroup startElement={<LuSearch />} width='full'>      
         <Input {...register('searchName')} placeholder="Search games ... " borderRadius='full'/>
       </InputGroup>
