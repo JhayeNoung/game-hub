@@ -13,11 +13,11 @@ function GameCard({ game }: Prop) {
     <Card.Root>
         <Image src={optimizedImage(game.background_image)}/>
         <CardBody>
-            <Card.Title>{game.name}</Card.Title>
             <HStack justify={'space-between'}>
               <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
               <MetacriticBadge score={game.metacritic}/>
             </HStack>
+            <Card.Title>{game.name}</Card.Title>
         </CardBody>
     </Card.Root>
   )

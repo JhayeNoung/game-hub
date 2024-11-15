@@ -13,10 +13,11 @@ function GameGrib({gameQuery}: Prop) {
     const { error, data, isLoading} = useGames(gameQuery);
     const skeletons = [ 1, 2, 3, 4, 5, 6]; // render six skeleton cards
 
+    if (error) return <Text>{error}</Text>
+    
     return (
         <>
-        {error && <Text>{error}</Text> }
-        <SimpleGrid columns={{sm: 1, md:2, lg: 3, xl: 5}} gap={3}>
+        <SimpleGrid columns={{sm: 1, md:2, lg: 3, xl: 4}} gap={3}>
             { isLoading && skeletons.map(skeleton => 
             // Wrap 'GameCardSkeleton' and 'Game Card' with 'GameCardContainer' 
             <GameCardContainer key={skeleton}>
