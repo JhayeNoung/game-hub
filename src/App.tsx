@@ -46,13 +46,18 @@ function App() {
         </Show>
         
         <GridItem area="main">
+          {/* GameHeading */}
           <Box paddingLeft={3} paddingBottom={3}>
             <GameHeading game={gameQuery}/>
           </Box>
+
+          {/* Filters */}
           <HStack paddingLeft={3}>
             <PlatformSelector selectedPlatform={gameQuery.platform} onSelectedPlatform={(platform)=>setGameQuery({...gameQuery, platform})}/>
             <SortSelector selectedSortOrder={gameQuery.ordering} onSelectedSortOrder={(ordering)=>setGameQuery({...gameQuery, ordering})}/>
           </HStack>
+
+          {/* GamCards */}
           <Box padding={3}>
             <GameGrib gameQuery={gameQuery}/>
           </Box>

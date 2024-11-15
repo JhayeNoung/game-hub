@@ -21,7 +21,13 @@ function GenreList({ onClick, selectedGenre }: Prop) {
       <List.Item key={ genre.id } paddingY={1}>
         <HStack>
           <Image boxSize="30px" borderRadius={10} src={genre.image_background}/>
-          <Button fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal" } onClick={()=>onClick(genre)} variant={'plain'} _hover={{textDecoration: 'underline'}}>{genre.name}</Button>
+          <Button 
+          fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal" } 
+          onClick={()=>onClick(genre)} variant={'plain'} 
+          _hover={{textDecoration: 'underline'}}
+          >
+            {genre.name}
+          </Button>
         </HStack>
       </List.Item>
       )}
