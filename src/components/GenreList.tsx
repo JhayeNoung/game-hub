@@ -1,6 +1,15 @@
 import useGenres, { Genre } from '@/hooks/useGenres'
 import { Button, HStack, Image, List, Spinner} from '@chakra-ui/react';
 
+
+/*
+The _hover property in your code is part of Chakra UI’s style props. 
+
+Chakra UI extends the base styling of its components with props like _hover, _active, _focus, etc., 
+to allow for easy customization of pseudo-classes and interaction states.
+
+_hover specifically maps to the CSS :hover pseudo-class, which applies styles when the mouse is over an element
+*/
 interface Prop{
   onClick: (genre: Genre) => void;
   selectedGenre: Genre | null;
